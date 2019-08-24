@@ -15,7 +15,8 @@ public class TransferToAnother : MonoBehaviour
     float viewLocalSizeUpper = 20f;
     float viewLocalSizeLeft = -20f;
     float viewLocalSizeRight = 20f;
-
+    public GameObject circleBlock;// = new GameObject();
+    Vector3 circleSize = new Vector3(1.75f, 1.75f, 1);
 
     void Start()
     {
@@ -71,6 +72,9 @@ public class TransferToAnother : MonoBehaviour
         cubeBlock[2].transform.DOLocalMove(left, 0.3f, true).SetEase(Ease.OutCubic);
         cubeBlock[3].transform.DOLocalMove(right, 0.3f, true).SetEase(Ease.OutCubic);
 
+        ///below is new shadow effect
+        Vector3 circleZoomOut = new Vector3(20, 20, 1);
+        circleBlock.transform.DOScale(circleZoomOut, 0.5f/*, true*/)/*.SetEase(Ease.OutCubic)*/;
     }
 
     public void ZoomInToNormalEffect()
@@ -91,5 +95,9 @@ public class TransferToAnother : MonoBehaviour
         cubeBlock[1].transform.DOLocalMove(upper, 0.3f, true).SetEase(Ease.OutCubic);
         cubeBlock[2].transform.DOLocalMove(left, 0.2f, true).SetEase(Ease.OutCubic);
         cubeBlock[3].transform.DOLocalMove(right, 0.2f, true).SetEase(Ease.OutCubic);
+
+        ///below is new shadow effect
+        circleBlock.transform.DOScale(circleSize, 0.2f/*, true*/)/*.SetEase(Ease.OutCubic)*/;
     }
+
 }
