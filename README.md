@@ -7,7 +7,7 @@ Made by Group D :
 
 ## About the game
 Topic:
-![](/image/Topic.png =250px)
+<img src="/image/Topic.png" width="250" height="250"></img>
 
 Descripition:
 It's the another world just your vision?
