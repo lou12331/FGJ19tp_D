@@ -136,7 +136,10 @@ public class Movement : MonoBehaviour
                 Jump(Vector2.up, false);
             }
             if (coll.onWall && !coll.onGround && DirToSide())
+            {
                 WallJump();
+                JumpCount = 0;
+            }
         }
 
         if (Input.GetButtonDown("Fire1") && !hasDashed)
