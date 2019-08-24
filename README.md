@@ -10,10 +10,10 @@ Itch.io page : https://ahhchao.itch.io/a-vision
 + Topic  
 <img src="/Image/Topic.png" width="250" height="250"></img>
 
-+ Descripition
++ Descripition  
 It's the another world just your vision?
 
-+ Control
++ Control  
 WASD / Arrow Keys to move and control direction when dashing.  
 Z to dash  
 Space to jump  
