@@ -22,15 +22,15 @@ public class WorldManager : MonoBehaviour
 
     public void ChangeWorld(){
         // Animation
-        InsideWorld.SetActive(true);
+        if(NormalWorld.active){
+            InsideWorld.SetActive(true);
         NormalWorld.SetActive(false);
         StartCoroutine(counter(changeDuration));
-        
-
+        }
     }
 
     IEnumerator counter(float d){
-        yield return new WaitForSeconds(d);
+        yield return new WaitForSecondsRealtime(d);
         InsideWorld.SetActive(false);
         NormalWorld.SetActive(true);
     }
