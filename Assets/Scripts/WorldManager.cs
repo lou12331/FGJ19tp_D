@@ -26,7 +26,7 @@ public class WorldManager : MonoBehaviour
             Debug.Log("Dead");
             //player.gameObject.SetActive(false);
             //player.transform.position = Vector3.Lerp(player.transform.position, spawnPoint, 0.5f);
-            player.transform.DOLocalMove(spawnPoint, 0.3f);  
+            player.transform.DOMove(spawnPoint, 0.3f);  
             player.gameObject.SetActive(true);
 
             if(player.gameObject.transform.position.x >= spawnPoint.x && player.gameObject.transform.position.x <= spawnPoint.x+1){
