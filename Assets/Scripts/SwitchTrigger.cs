@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Test : MonoBehaviour
+public class SwitchTrigger : MonoBehaviour
 {
     public WorldManager worldManager;
     private BoxCollider2D box;
