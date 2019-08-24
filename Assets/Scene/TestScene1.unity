@@ -9927,7 +9927,7 @@ SpriteRenderer:
   m_Size: {x: 2.2857144, y: 1.5238096}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &767093609
@@ -15463,6 +15463,12 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &1171658847 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 165322692, guid: 23dc98064d26761498d22cb8fb0f7906,
+    type: 3}
+  m_PrefabInstance: {fileID: 451462578}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1172510830
 GameObject:
   m_ObjectHideFlags: 0
@@ -16154,6 +16160,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7091713302020369328, guid: 8c2ac8b1a963bd74ab803395385e41cc,
+        type: 3}
+      propertyPath: circleBlock
+      value: 
+      objectReference: {fileID: 1171658847}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c2ac8b1a963bd74ab803395385e41cc, type: 3}
 --- !u!114 &1260738486 stripped
@@ -20467,7 +20478,7 @@ SpriteRenderer:
   m_Size: {x: 2.2857144, y: 1.5238096}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1637918977
@@ -20691,6 +20702,6 @@ SpriteRenderer:
   m_Size: {x: 2.2857144, y: 1.5238096}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
