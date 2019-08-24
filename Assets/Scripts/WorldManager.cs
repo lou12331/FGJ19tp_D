@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class WorldManager : MonoBehaviour
 {
@@ -23,10 +24,14 @@ public class WorldManager : MonoBehaviour
     {
         if(player.isDead){
             Debug.Log("Dead");
-            player.gameObject.SetActive(false);
-            player.transform.position = spawnPoint;
+            //player.gameObject.SetActive(false);
+            //player.transform.position = Vector3.Lerp(player.transform.position, spawnPoint, 0.5f);
+            player.transform.DOLocalMove(spawnPoint, 0.5f);  
             player.gameObject.SetActive(true);
-            player.isDead = false;
+
+            if(player.gameObject.transform.position.x >= spawnPoint.x && player.gameObject.transform.position.x <= spawnPoint.x+1){
+                player.isDead = false;
+            }
         }   
     }
 
@@ -34,8 +39,8 @@ public class WorldManager : MonoBehaviour
         // Animation
         if(NormalWorld.active){
             InsideWorld.SetActive(true);
-        NormalWorld.SetActive(false);
-        StartCoroutine(counter(changeDuration));
+            NormalWorld.SetActive(false);
+            StartCoroutine(counter(changeDuration));
         }
     }
 
