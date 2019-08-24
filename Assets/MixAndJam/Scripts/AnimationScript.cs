@@ -8,6 +8,7 @@ public class AnimationScript : MonoBehaviour
     private Animator anim;
     private Movement move;
     private Collision coll;
+    public bool isFalling;
     [HideInInspector]
     public SpriteRenderer sr;
 
@@ -29,6 +30,7 @@ public class AnimationScript : MonoBehaviour
         anim.SetBool("canMove", move.canMove);
         anim.SetBool("isDashing", move.isDashing);
 
+        isFalling = anim.GetCurrentAnimatorStateInfo(0).IsName("Fall");
     }
 
     public void SetHorizontalMovement(float x,float y, float yVel)
