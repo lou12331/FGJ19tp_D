@@ -5,7 +5,6 @@ using UnityEngine;
 public class SwitchTrigger : MonoBehaviour
 {
     public WorldManager worldManager;
-    public TransferToAnother TransferToAnother;
     private BoxCollider2D box;
     // Start is called before the first frame update
     void Start()
