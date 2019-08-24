@@ -10,6 +10,7 @@ public class WorldManager : MonoBehaviour
     public float changeDuration = 3f;
     public Player player;
     public Vector3 spawnPoint;
+    public TransferToAnother TransferToAnother;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,8 +39,10 @@ public class WorldManager : MonoBehaviour
     public void ChangeWorld(){
         // Animation
         if(NormalWorld.active){
+            //TransferToAnother.ZoomInEffect();
             InsideWorld.SetActive(true);
             NormalWorld.SetActive(false);
+            TransferToAnother.ZoomOutEffect();
             StartCoroutine(counter(changeDuration));
         }
     }
@@ -48,6 +51,7 @@ public class WorldManager : MonoBehaviour
         yield return new WaitForSecondsRealtime(d);
         InsideWorld.SetActive(false);
         NormalWorld.SetActive(true);
+        TransferToAnother.ZoomInToNormalEffect();
     }
 
 
