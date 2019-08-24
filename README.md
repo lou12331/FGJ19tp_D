@@ -6,8 +6,8 @@ Made in FGJ2019TP #fgj19tp
 Made by Group D : 
 
 ## About the game
-Topic:
-<img src="/image/Topic.png" width="250" height="250"></img>
+Topic:  
+<img src="/Image/Topic.png" width="250" height="250"></img>
 
 Descripition:
 It's the another world just your vision?
