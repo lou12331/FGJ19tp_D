@@ -47,8 +47,8 @@ public class TransferToAnother : MonoBehaviour
 
     public void ZoomOutEffect()
     {
-        Vector3 bottom = new Vector3(0, -28, 0);
-        Vector3 upper = new Vector3(0, 28, 0);
+        Vector3 bottom = new Vector3(0, -1000, 0);
+        Vector3 upper = new Vector3(0, 1000, 0);
         Vector3 left = new Vector3(-10000, 0, 0);
         Vector3 right = new Vector3(10000, 0, 0);
 
