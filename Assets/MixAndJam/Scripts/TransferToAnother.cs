@@ -7,10 +7,19 @@ public class TransferToAnother : MonoBehaviour
 {
     public bool test = true;
     public GameObject[] cubeBlock = new GameObject[4];
+    //float viewLocalSizeBottom = -16.5f;
+    //float viewLocalSizeUpper = 16f;
+    //float viewLocalSizeLeft = -16.5f;
+    //float viewLocalSizeRight = 16f;
+    float viewLocalSizeBottom = -20f;
+    float viewLocalSizeUpper = 20f;
+    float viewLocalSizeLeft = -20f;
+    float viewLocalSizeRight = 20f;
+
 
     void Start()
     {
-
+        ZoomInToNormalEffect();
     }
 
     void Update()
@@ -66,10 +75,10 @@ public class TransferToAnother : MonoBehaviour
 
     public void ZoomInToNormalEffect()
     {
-        Vector3 bottom = new Vector3(0, -16.5f, 0);
-        Vector3 upper = new Vector3(0, 16f, 0);
-        Vector3 left = new Vector3(-16.5f, 0, 0);
-        Vector3 right = new Vector3(16, 0, 0);
+        Vector3 bottom = new Vector3(0, viewLocalSizeBottom, 0);
+        Vector3 upper = new Vector3(0, viewLocalSizeUpper, 0);
+        Vector3 left = new Vector3(viewLocalSizeLeft, 0, 0);
+        Vector3 right = new Vector3(viewLocalSizeRight, 0, 0);
 
         //for (int i = 0; i < 1; i++)
         //{
