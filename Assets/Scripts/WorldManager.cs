@@ -10,6 +10,7 @@ public class WorldManager : MonoBehaviour
     public float changeDuration = 3f;
     public Player player;
     public Vector3 spawnPoint;
+    public GameObject BloodParticle;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,15 +25,33 @@ public class WorldManager : MonoBehaviour
     {
         if(player.isDead){
             Debug.Log("Dead");
+            player.isDead = false;
             //player.gameObject.SetActive(false);
             //player.transform.position = Vector3.Lerp(player.transform.position, spawnPoint, 0.5f);
-            player.transform.DOMove(spawnPoint, 0.3f);  
+            BloodParticle.transform.position = player.transform.position;
+            BloodParticle.SetActive(true);
+            BloodParticle.GetComponent<ParticleSystem>().Play();
+
+            player.transform.DOMove(spawnPoint, 0.3f).OnStart(()=> onPlayerDeadStart()).OnComplete(()=>onPlayerDeadEnd());  
             player.gameObject.SetActive(true);
 
             if(player.gameObject.transform.position.x >= spawnPoint.x && player.gameObject.transform.position.x <= spawnPoint.x+1){
-                player.isDead = false;
+                
             }
         }   
+    }
+    void onPlayerDeadStart()
+    {
+        player.movement.canMove = false;
+        player.GetComponent<Collider2D>().enabled = false;
+        player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        player.GetComponent<Rigidbody2D>().simulated = false;
+    }
+    void onPlayerDeadEnd()
+    {
+        player.movement.canMove = true;
+        player.GetComponent<Collider2D>().enabled = true;
+        player.GetComponent<Rigidbody2D>().simulated = true;
     }
 
     public void ChangeWorld(){
