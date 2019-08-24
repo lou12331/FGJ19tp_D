@@ -63,4 +63,24 @@ public class TransferToAnother : MonoBehaviour
         cubeBlock[3].transform.DOLocalMove(right, 0.3f, true).SetEase(Ease.OutCubic);
 
     }
+
+    public void ZoomInToNormalEffect()
+    {
+        Vector3 bottom = new Vector3(0, -16.5f, 0);
+        Vector3 upper = new Vector3(0, 16f, 0);
+        Vector3 left = new Vector3(-16.5f, 0, 0);
+        Vector3 right = new Vector3(16, 0, 0);
+
+        //for (int i = 0; i < 1; i++)
+        //{
+        //    cubeBlock[0].transform.localPosition = Vector3.Lerp(cubeBlock[0].transform.localPosition, bottom, 0.1f);
+        //    cubeBlock[1].transform.localPosition = Vector3.Lerp(cubeBlock[1].transform.localPosition, upper, 0.1f);
+        //    cubeBlock[2].transform.localPosition = Vector3.Lerp(cubeBlock[2].transform.localPosition, left, 0.1f);
+        //    cubeBlock[3].transform.localPosition = Vector3.Lerp(cubeBlock[3].transform.localPosition, right, 0.1f);
+        //}
+        cubeBlock[0].transform.DOLocalMove(bottom, 0.3f, true).SetEase(Ease.OutCubic);
+        cubeBlock[1].transform.DOLocalMove(upper, 0.3f, true).SetEase(Ease.OutCubic);
+        cubeBlock[2].transform.DOLocalMove(left, 0.2f, true).SetEase(Ease.OutCubic);
+        cubeBlock[3].transform.DOLocalMove(right, 0.2f, true).SetEase(Ease.OutCubic);
+    }
 }
