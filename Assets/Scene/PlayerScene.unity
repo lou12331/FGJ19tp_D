@@ -187,5 +187,35 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1645550624698670639, guid: cecc03e68811356448b9fe8717f9bf18,
+        type: 3}
+      propertyPath: trailColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1645550624698670639, guid: cecc03e68811356448b9fe8717f9bf18,
+        type: 3}
+      propertyPath: trailColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1645550624698670639, guid: cecc03e68811356448b9fe8717f9bf18,
+        type: 3}
+      propertyPath: trailColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1645550624698670639, guid: cecc03e68811356448b9fe8717f9bf18,
+        type: 3}
+      propertyPath: fadeColor.r
+      value: 0.6603774
+      objectReference: {fileID: 0}
+    - target: {fileID: 1645550624698670639, guid: cecc03e68811356448b9fe8717f9bf18,
+        type: 3}
+      propertyPath: fadeColor.g
+      value: 0.6603774
+      objectReference: {fileID: 0}
+    - target: {fileID: 1645550624698670639, guid: cecc03e68811356448b9fe8717f9bf18,
+        type: 3}
+      propertyPath: fadeColor.b
+      value: 0.6603774
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cecc03e68811356448b9fe8717f9bf18, type: 3}
