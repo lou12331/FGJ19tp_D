@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
     public static Player instence;
     public bool isDead = false;
     public Movement movement;
+    public TransferToAnother TransferToAnother;
     // Start is called before the first frame update
     private void Awake()
     {
