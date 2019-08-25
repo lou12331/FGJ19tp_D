@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MenuAction : MonoBehaviour
 {
@@ -18,12 +19,12 @@ public class MenuAction : MonoBehaviour
 
     public void onclickStart()
     {
-        Application.LoadLevel("TestScene1");
+       SceneManager.LoadScene("TestScene1");
     }
 
     public void onclickBWStart()
     {
-        Application.LoadLevel("Tutorial1");
+        SceneManager.LoadScene("Tutorial1");
     }
 
 
