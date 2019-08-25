@@ -21,7 +21,8 @@ public class EndPointTrigger : MonoBehaviour
     void Update()
     {
         if(endStage && !audio.isPlaying){
-            SceneManager.LoadScene(nextSceneName); 
+            //SceneManager.LoadScene(nextSceneName); 
+            WorldManager.instance.LoadScene(nextSceneName, true);
         }
     }
 
