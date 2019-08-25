@@ -58,7 +58,7 @@ public class MenuAction : MonoBehaviour
                 temp = GameObject.Instantiate(StageBtn);
                 temp.transform.parent = StageBtnParent.transform;
                 tempRect = temp.GetComponent<RectTransform>();
-                tempRect.position = new Vector3(0 + StageBtnOffestX * ((int.Parse(tempSceneName) - 1) / RowBtnCount),
+                tempRect.localPosition = new Vector3(0 + StageBtnOffestX * ((int.Parse(tempSceneName) - 1) / RowBtnCount),
                     -100 - BtnOffestY * ((int.Parse(tempSceneName) - 1) % RowBtnCount),0);
                 temp.GetComponent<ChangeSceneButton>().init(tempSceneName);
             }
