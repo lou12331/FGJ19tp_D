@@ -29,6 +29,8 @@ public class WorldManager : MonoBehaviour
     {
         LoadingObj.SetActive(false);
         NowLevel = SceneManager.GetActiveScene().name;
+
+        SetWrold();
     }
 
     // Update is called once per frame
@@ -105,12 +107,14 @@ public class WorldManager : MonoBehaviour
         NormalWorld = GameObject.Find("表世界");
         InsideWorld = GameObject.Find("裏世界");
         if (NormalWorld)
+        {
             NormalWorld.SetActive(true);
-        if (InsideWorld)
-            InsideWorld.SetActive(false);
-        SpawnPoint = GameObject.FindGameObjectWithTag("SpawnPoint");
-        spawnPoint = SpawnPoint.transform.position;
-        initPlayer();
+            if (InsideWorld)
+                InsideWorld.SetActive(false);
+            SpawnPoint = GameObject.FindGameObjectWithTag("SpawnPoint");
+            spawnPoint = SpawnPoint.transform.position;
+            initPlayer();
+        }
     }
     public void initPlayer()
     {
@@ -156,9 +160,14 @@ public class WorldManager : MonoBehaviour
         {
             yield return null;
         }
+        
         asyncOperation.allowSceneActivation = true;
         yield return null;
         Player.instence.transform.position = spawnPoint;
         yield break;
+    }
+    public void LoadTutotal()
+    {
+        LoadScene("Tutorial1", true);
     }
 }
