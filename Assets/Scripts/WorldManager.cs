@@ -126,7 +126,12 @@ public class WorldManager : MonoBehaviour
     }
     public void initPlayer()
     {
-        if (Player.instence != null) return;
+        if (Player.instence != null)
+        {
+            Player.instence.transform.position = spawnPoint;
+            PlayerState(true);
+            return;
+        }
         StartCoroutine(LoadPlayer());
 
     }
@@ -149,7 +154,9 @@ public class WorldManager : MonoBehaviour
         }
         asyncOperation.allowSceneActivation = true;
 
-        yield return new WaitForSecondsRealtime(1);
+        yield return new WaitForSecondsRealtime(0.5f);
+        asyncOperation = SceneManager.UnloadSceneAsync(NowLevel, UnloadSceneOptions.None);
+        yield return new WaitForSecondsRealtime(0.5f);
         if (LoadWorldSetting)
             SetWrold();
         else
@@ -157,7 +164,7 @@ public class WorldManager : MonoBehaviour
             SceneManager.UnloadSceneAsync("PlayerScene", UnloadSceneOptions.None);
             Player.instence = null;
         }
-        asyncOperation = SceneManager.UnloadSceneAsync(NowLevel, UnloadSceneOptions.None);
+        
         NowLevel = SceneName;
         LoadingObj.GetComponent<CanvasGroup>().DOFade(0, 0.2f);
         yield return new WaitForSecondsRealtime(0.2f);
@@ -182,5 +189,11 @@ public class WorldManager : MonoBehaviour
     public void LoadTutotal()
     {
         LoadScene("Tutorial1", true);
+    }
+    public void PlayerState(bool canMave)
+    {
+        Player.instence.movement.canMove = canMave;
+        Player.instence.Collider2D.enabled = canMave;
+        Player.instence.Rigidbody2D.simulated = canMave;
     }
 }

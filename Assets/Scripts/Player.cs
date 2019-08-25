@@ -7,6 +7,8 @@ public class Player : MonoBehaviour
     public static Player instence;
     public bool isDead = false;
     public Movement movement;
+    public Collider2D Collider2D;
+    public Rigidbody2D Rigidbody2D;
     public TransferToAnother TransferToAnother;
     // Start is called before the first frame update
     private void Awake()
@@ -16,6 +18,8 @@ public class Player : MonoBehaviour
     void Start()
     {
         movement = GetComponent<Movement>();
+        Collider2D = GetComponent<Collider2D>();
+        Rigidbody2D = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
