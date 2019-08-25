@@ -40,9 +40,9 @@ public class WorldManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.R))
         {
-            LoadScene("Tutorial1", true);
+            Player.instence.isDead = true;
         }
         if (Input.GetKeyDown(KeyCode.Escape))
         {
