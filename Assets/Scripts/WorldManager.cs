@@ -85,7 +85,7 @@ public class WorldManager : MonoBehaviour
     public void ChangeWorld()
     {
         // Animation
-        if (NormalWorld.active)
+        if (NormalWorld.activeSelf)
         {
             Player.instence.TransferToAnother.ZoomOutEffect();///add by Haru
             InsideWorld.SetActive(true);
