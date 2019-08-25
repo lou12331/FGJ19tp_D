@@ -27,6 +27,11 @@ public class WorldManager : MonoBehaviour
         if(player.isDead){
             Debug.Log("Dead");
             player.isDead = false;
+
+            InsideWorld.SetActive(false);
+            NormalWorld.SetActive(true);
+            StopAllCoroutines();
+            TransferToAnother.ZoomInToNormalEffect();
             //player.gameObject.SetActive(false);
             //player.transform.position = Vector3.Lerp(player.transform.position, spawnPoint, 0.5f);
             BloodParticle.transform.position = player.transform.position;
