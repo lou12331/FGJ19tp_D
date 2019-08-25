@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/Scene/OpeningBW.unity
     guid: 4b7a702074935db4fa182d548232707f
   - enabled: 1
-    path: Assets/Scene/Tutorial1.unity
+    path: Assets/Scene/StageN-1.unity
     guid: 118b25cf45b541040ada1f92c448f738
   - enabled: 1
     path: Assets/Scene/Tutorial2.unity
