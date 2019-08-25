@@ -198,7 +198,7 @@ public class Movement : MonoBehaviour
 
         anim.SetTrigger("dash");
 
-        //rb.velocity = Vector2.zero;
+        rb.velocity = Vector2.zero;
         Vector2 dir = new Vector2(x, y);
 
         rb.velocity += dir.normalized * dashSpeed;
@@ -214,7 +214,7 @@ public class Movement : MonoBehaviour
 
         dashParticle.Play();
         rb.gravityScale = 0;
-        //GetComponent<BetterJumping>().enabled = false;
+        GetComponent<BetterJumping>().enabled = false;
         wallJumped = true;
         isDashing = true;
 
@@ -224,7 +224,7 @@ public class Movement : MonoBehaviour
         inDashBuff = false;
         dashParticle.Stop();
         rb.gravityScale = 3;
-        //GetComponent<BetterJumping>().enabled = true;
+        GetComponent<BetterJumping>().enabled = true;
         wallJumped = false;
         isDashing = false;
 
