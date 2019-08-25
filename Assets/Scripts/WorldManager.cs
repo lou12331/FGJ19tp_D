@@ -21,7 +21,11 @@ public class WorldManager : MonoBehaviour
     // Start is called before the first frame update
     private void Awake()
     {
-        if (instance != null) Destroy(gameObject);
+        if (instance != null && instance != this)
+        {
+            Destroy(this.gameObject);
+            return;
+        }
         instance = this;
         DontDestroyOnLoad(gameObject);
     }
@@ -29,6 +33,8 @@ public class WorldManager : MonoBehaviour
     {
         LoadingObj.SetActive(false);
         NowLevel = SceneManager.GetActiveScene().name;
+
+        SetWrold();
     }
 
     // Update is called once per frame
@@ -37,6 +43,10 @@ public class WorldManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.P))
         {
             LoadScene("Tutorial1", true);
+        }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            LoadScene("OpeningBW", false);
         }
 
         //player
@@ -83,7 +93,7 @@ public class WorldManager : MonoBehaviour
     public void ChangeWorld()
     {
         // Animation
-        if (NormalWorld.active)
+        if (NormalWorld.activeSelf)
         {
             Player.instence.TransferToAnother.ZoomOutEffect();///add by Haru
             InsideWorld.SetActive(true);
@@ -105,12 +115,14 @@ public class WorldManager : MonoBehaviour
         NormalWorld = GameObject.Find("表世界");
         InsideWorld = GameObject.Find("裏世界");
         if (NormalWorld)
+        {
             NormalWorld.SetActive(true);
-        if (InsideWorld)
-            InsideWorld.SetActive(false);
-        SpawnPoint = GameObject.FindGameObjectWithTag("SpawnPoint");
-        spawnPoint = SpawnPoint.transform.position;
-        initPlayer();
+            if (InsideWorld)
+                InsideWorld.SetActive(false);
+            SpawnPoint = GameObject.FindGameObjectWithTag("SpawnPoint");
+            spawnPoint = SpawnPoint.transform.position;
+            initPlayer();
+        }
     }
     public void initPlayer()
     {
@@ -137,11 +149,16 @@ public class WorldManager : MonoBehaviour
         }
         asyncOperation.allowSceneActivation = true;
 
-
         yield return new WaitForSecondsRealtime(1);
         if (LoadWorldSetting)
             SetWrold();
+        else
+        {
+            SceneManager.UnloadSceneAsync("PlayerScene", UnloadSceneOptions.None);
+            Player.instence = null;
+        }
         asyncOperation = SceneManager.UnloadSceneAsync(NowLevel, UnloadSceneOptions.None);
+        NowLevel = SceneName;
         LoadingObj.GetComponent<CanvasGroup>().DOFade(0, 0.2f);
         yield return new WaitForSecondsRealtime(0.2f);
         LoadingObj.SetActive(false);
@@ -156,9 +173,14 @@ public class WorldManager : MonoBehaviour
         {
             yield return null;
         }
+
         asyncOperation.allowSceneActivation = true;
         yield return null;
         Player.instence.transform.position = spawnPoint;
         yield break;
+    }
+    public void LoadTutotal()
+    {
+        LoadScene("Tutorial1", true);
     }
 }
