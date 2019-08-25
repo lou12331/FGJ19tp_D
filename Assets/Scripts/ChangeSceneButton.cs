@@ -32,6 +32,6 @@ public class ChangeSceneButton : MonoBehaviour
 
     void OnClick(BaseEventData pointData)
     {
-        WorldManager.instance.LoadScene(changeSceneName,false);
+        WorldManager.instance.LoadScene(changeSceneName,true);
     }
 }
